@@ -89,7 +89,7 @@ module.exports = class FFmpeg {
       '-flags',
       '+global_header',
       */
-      `${RECORD_FILE_LOCATION_PATH}/${this._rtpParameters.fileName}.webm`
+      `${RECORD_FILE_LOCATION_PATH}/${this._rtpParameters.fileName}.m3u8`
     ]);
 
     console.log('commandArgs:%o', commandArgs);
