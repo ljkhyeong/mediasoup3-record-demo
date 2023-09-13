@@ -93,7 +93,9 @@ module.exports = class GStreamer {
       '!',
       'queue',
       '!',
-      'rtpvp8depay',
+      'rtph264depay',
+      '!',
+      'h264parse',
       '!',
       'mux.'
     ];
@@ -142,9 +144,9 @@ module.exports = class GStreamer {
 
   get _sinkArgs () {
     return [
-      'webmmux name=mux',
+      'mpegtsmux name=mux',
       '!',
-      `filesink location=${RECORD_FILE_LOCATION_PATH}/${this._rtpParameters.fileName}.webm`
+      `hlssink playlist-location=${RECORD_FILE_LOCATION_PATH}/${this._rtpParameters.fileName}.m3u8 location=segment%05d.ts target-duration=3`
     ];
   }
 }

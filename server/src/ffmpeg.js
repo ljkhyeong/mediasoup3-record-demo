@@ -102,7 +102,7 @@ module.exports = class FFmpeg {
       '-map',
       '0:v:0',
       '-c:v',
-      'copy'
+      'h264'
     ];
   }
 
