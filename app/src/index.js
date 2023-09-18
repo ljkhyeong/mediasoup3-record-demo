@@ -85,6 +85,7 @@ const handleRouterRtpCapabilitiesRequest = async (jsonMessage) => {
     const device = new mediasoup.Device();
     // Load the mediasoup device with the router rtp capabilities gotten from the server
     await device.load({ routerRtpCapabilities });
+    console.log("device는 이거야", device);
 
     peer = new Peer(sessionId, device);
     createTransport();
